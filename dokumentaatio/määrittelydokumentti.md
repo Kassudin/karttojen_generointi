@@ -2,16 +2,16 @@
 Tässä dokumentissa määritellään Helsingin yliopiston Algoritmit ja tekoäly(TKT20010)-kurssilla toteutettava harjoitustyö. Kurssi suoritetaan Tietojenkäsittelytieteen kandiohjelmassa (TKT).
 
 # Aihe ja toteutus
-Aiheena on toteuttaa proseduraalisten karttojen generointiin soveltuva ohjelma, jonka avulla voidaan luoda jokaisella ohjelman suorituskerralla erilainen kartta. Kartan tuottamiseen käytetään Bowyer-Watson algoritmia, sekä Perlin-kohina algoritmia. Bowyer-Watsonin avulla muodostetaan triangulaatio, josta johdetaan Voronoi-diagrammi. Tämä toimii kartan pohjana. Tämän jälkeen Perlin-kohinalla tuotettu satunnainen kohina sijoitetaan diagrammin solujen päälle, jolla saadaan määriteltyä jokaiselle solulle korkeus.
+Aiheena on toteuttaa proseduraalisten karttojen generointiin soveltuva ohjelma, jonka avulla voidaan luoda jokaisella ohjelman suorituskerralla erilainen kaksiulotteinen kartta. Kartan tuottamiseen käytetään Bowyer-Watson algoritmia, sekä Perlin-kohina algoritmia. Bowyer-Watsonin avulla muodostetaan triangulaatio, josta johdetaan Voronoi-diagrammi. Tämä toimii kartan pohjana. Tämän jälkeen Perlin-kohinalla tuotettu satunnainen kohina sijoitetaan diagrammin solujen päälle, jolla saadaan määriteltyä jokaiselle solulle korkeus. Eri korkeudet tulevat kuvaamaan värein eri pintoja, kuten vesi, maa ja näiden syvyydet tai jyrkkyydet.
 
 # Aikavaativuudet
-Aikavaativuus Bowyer-Watson algoritmille on lähteiden mukaan vähintään O(n^2) ja Perlin-kohina algoritmille O(2^n).
+Aikavaativuus Bowyer-Watson algoritmille on lähteiden mukaan vähintään O(n^2) ja Perlin-kohina algoritmille O(2^d), missä d on ulottovuuksien määrä (tässä tapauksessa d=2).
 
 # Ohjelmointikieli
 Harjoitustyö toteutetaan Pythonilla. 
 
 # Dokumentaation kieli
-Dokumentaatio kirjoitetaan suomeksi
+Dokumentaatio kirjoitetaan suomeksi.
 
 # Lähteet
 https://en.wikipedia.org/wiki/Delaunay_triangulation
