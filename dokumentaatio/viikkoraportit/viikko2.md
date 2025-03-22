@@ -9,3 +9,5 @@ Tällä viikolla opin Bowyer-Watson algoritmin toteuttamisesta. Opin myös, mite
 Hankaluuksia tuotti aluksi projektin ytimen kehittämisen aloittaminen. En ollut kovin varma, mistä lähteä liikkeelle tai mitä tarvittaisiin algoritmin toteuttamiseen. Lisäksi hankaluuksia tuotti oikeanlaisen superkolmion luonti. En ole aivan varma, miten superkolmion koko vaikuttaa algoritmiin. Internetin mukaan sen vain täytyy kattaa kaikki annetut pisteet.
 
 Ensi viikolla toteutan Bowyer-Watson algoritmin loppuun. Lisäksi pitää miettiä jokin tapa, miten visualisoidaan saatu kuvio (todennäköisesti pygame). Lisäksi alan toteuttamaan ohjelmaa, jolla voidaan muuntaa kuvio Voronoi-diagrammiksi.
+
+Työhön käytetty aika: 14h
