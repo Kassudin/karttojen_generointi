@@ -44,7 +44,7 @@ def superkolmio(pisteet):
     C = (3 * leveys, keskipiste)
     return Kolmio(A, B, C)
 
-def kehäympyrä(A,B,C): 
+def kehäympyrän_keskipiste(A,B,C): 
     #kolmion kehäympyrän laskemiseen tarvittavat kaavat 
     #https://en.wikipedia.org/wiki/Circumcircle#Circumcenter_coordinates 
     Ax,Ay = A
@@ -59,7 +59,7 @@ def kehäympyrä(A,B,C):
 
 def onko_piste_kehäympyrän_sisällä(A,B,C,P):
     #tarkistetaan onko piste P kolmion ABC kehäympyrän sisällä
-    U = kehäympyrä(A,B,C)
+    U = kehäympyrän_keskipiste(A,B,C)
     #lasketaan etäisyys keskipisteestä pisteeseen A ympyrän eli ympyrän säde r
     r = math.sqrt((U[0]-A[0])**2+(U[1]-A[1])**2)
     #lasketaan pisteestä P etäisyys keskipisteeseen
@@ -67,21 +67,47 @@ def onko_piste_kehäympyrän_sisällä(A,B,C,P):
     #jos etäisyys on pienempi tai yhtäsuuri kuin säde, on piste kehäympyrän sisällä
     return d<=r    
 
-#def BowyerWatson(pisteet):
+def BowyerWatson(pisteet):
     #seurataan pseudokoodia https://en.wikipedia.org/wiki/Bowyer%E2%80%93Watson_algorithm
     #muodostetaan superkolmio
-    #sk = superkolmio(pisteet)
+    sk = superkolmio(pisteet) 
     #lisätään superkolmio kolmioiden listaan
-    #kolmiot = [sk]
+    kolmiot = [sk]
     #käydään pisteet läpi   
-    #for p in pisteet:
-        #"huonot" kolmiot omaan listaan
-        #huonot_kolmiot = []
-        #for kolmio in kolmiot:
+    for piste in pisteet:
+        #huonot kolmiot omaan listaan
+        huonot_kolmiot = []
+        for kolmio in kolmiot:
             #tarkistetaan onko piste kolmion kehäympyrän sisällä
-            #if onko_piste_kehäympyrän_sisällä(kolmio.A, kolmio.B, kolmio.C, p):
+            if onko_piste_kehäympyrän_sisällä(kolmio.A, kolmio.B, kolmio.C, piste):
                 #jos on, lisätään kolmio huonojen kolmioiden listaan
-                #huonot_kolmiot.append(kolmio)
-        #monikulmiot = set()
-       
+                huonot_kolmiot.append(kolmio)
+        monikulmiot = set()
+        #käydään huonot kolmiot läpi
+        for huonot in huonot_kolmiot:
+            for reuna in huonot.reunat:
+                #jos reuna ei ole jaettu minkään muun huonon kolmion kanssa
+                if reuna not in monikulmiot: 
+                    monikulmiot.add(reuna) #lisätään se 
+                else:
+                    monikulmiot.remove(reuna) #poistetaan, reuna tuli vastaan toisessa huonossa kolmiossa
+        for huono_kolmio in huonot_kolmiot:
+            kolmiot.remove(huono_kolmio)#poistetaan huonot kolmiot kolmioiden listasta
+        #olkoon piste p yksi kolmion koordinaateista
+        for A,B in monikulmiot:
+            kolmiot.append(Kolmio(A,B,piste)) #lisätään kolmio kolmioiden listaan
+    deluaunay = [] #nyt muodostetaan lopullinen triangulaatio
+    for kolmio in kolmiot: #käydään  kolmiolista läpi
+        sk_karjet=(sk.A,sk.B,sk.C) #superkolmion kärjet
+        if kolmio.A in sk_karjet or kolmio.B in sk_karjet or kolmio.C in sk_karjet: #jos kolmio jakaa superkolmion kärjen niin ei oteta sitä mukaan
+            continue
+        deluaunay.append(kolmio) #muut lisätään listaan
+    #palautetaan lista kolmioista, jotka toteuttavat Deluaunay triangulaation
+    return deluaunay
 
+#def voronoi(pisteet):
+    #https://stackoverflow.com/questions/85275/how-do-i-derive-a-voronoi-diagram-given-its-point-set-and-its-delaunay-triangula
+    #muodostetaan Delaunay triangulaatio
+    #kolmiot = BowyerWatson(pisteet)
+    #reuna_ja_kolmiot = {} #avaimena reuna, arvona kolmiot, jotka jakavat reunan
+    #Todo: jos kahdella kolmiolla sama reuna, niin yhdistetään niiden kehäympyröiden keskipisteet
