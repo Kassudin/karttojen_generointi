@@ -2,7 +2,7 @@
 
 Kolmannella viikolla toteutin Bowyer-Watson algoritmin loppuun ja sen piirtämisen. Lisäksi aloitin Voronoi-diagrammiksi muuntavan funktion toteuttamisen
 
-Ohjelmalla voidaan nyt muodostaa satunnaisista pisteistä delunay triangulaatio(n>=3). Lisäksi syntyvä kuvio voidaan visualisoida (pygame). Yksikkötestit kirjoitettu testaamaan palautuvien kolmioiden määrää eri tilanteissa. 
+Ohjelmalla voidaan nyt muodostaa satunnaisista pisteistä delaunay triangulaatio(n>=3). Lisäksi syntyvä kuvio voidaan visualisoida pygamella (generaattori.py). Yksikkötestit kirjoitettu testaamaan palautuvien kolmioiden määrää eri tilanteissa. 
 
 Tällä viikolla opin, miten Bowyer-Watson algoritmi totetutetaan. Lisäksi tutustuin logiikkaan, miten muunnetaan saatu triangulaatio Voronoi-diagrammiksi #https://stackoverflow.com/questions/85275/how-do-i-derive-a-voronoi-diagram-given-its-point-set-and-its-delaunay-triangula. 
 
