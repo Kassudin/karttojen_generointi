@@ -1,5 +1,6 @@
 import pygame
 import random
+import sys
 from bowyerwatson import BowyerWatson
 
 def satunnaiset_pisteet(n=250):
@@ -23,7 +24,26 @@ def generoi_kuva(): # pragma: no cover
         for tapahtuma in pygame.event.get():
             if tapahtuma.type == pygame.QUIT:
                 running = False
+            elif tapahtuma.type == pygame.KEYDOWN:
+                if tapahtuma.key == pygame.K_RETURN:
+                    naytto.fill((255, 255, 255)) #tyhjennetään
+                    pisteet = satunnaiset_pisteet()
+                    kolmiot = BowyerWatson(pisteet)  
+                    for p in pisteet:
+                        pygame.draw.circle(naytto, (0,0,0), p, 2)
+                    for kolmio in kolmiot:
+                        pygame.draw.polygon(naytto,(0,0,0),[kolmio.A, kolmio.B, kolmio.C], 1)
+                    pygame.display.flip()
     pygame.quit()
+    sys.exit
             
 if __name__ == "__main__": # pragma: no cover
     generoi_kuva()
+
+
+
+
+
+
+
+
