@@ -1,5 +1,4 @@
 import math
-import random
 
 class Kolmio:
     #tähän kolmion tiedot
@@ -44,7 +43,7 @@ def superkolmio(pisteet):
     C = (3 * leveys, keskipiste)
     return Kolmio(A, B, C)
 
-def kehäympyrän_keskipiste(A,B,C): 
+def kehaympyrän_keskipiste(A,B,C): 
     #kolmion kehäympyrän laskemiseen tarvittavat kaavat 
     #https://en.wikipedia.org/wiki/Circumcircle#Circumcenter_coordinates 
     Ax,Ay = A
@@ -57,9 +56,9 @@ def kehäympyrän_keskipiste(A,B,C):
     #palautetaan keskipiste U
     return (Ux,Uy)
 
-def onko_piste_kehäympyrän_sisällä(A,B,C,P):
+def onko_piste_kehaympyrän_sisällä(A,B,C,P):
     #tarkistetaan onko piste P kolmion ABC kehäympyrän sisällä
-    U = kehäympyrän_keskipiste(A,B,C)
+    U = kehaympyrän_keskipiste(A,B,C)
     #lasketaan etäisyys keskipisteestä pisteeseen A ympyrän eli ympyrän säde r
     r = math.sqrt((U[0]-A[0])**2+(U[1]-A[1])**2)
     #lasketaan pisteestä P etäisyys keskipisteeseen
@@ -79,7 +78,7 @@ def BowyerWatson(pisteet):
         huonot_kolmiot = []
         for kolmio in kolmiot:
             #tarkistetaan onko piste kolmion kehäympyrän sisällä
-            if onko_piste_kehäympyrän_sisällä(kolmio.A, kolmio.B, kolmio.C, piste):
+            if onko_piste_kehaympyrän_sisällä(kolmio.A, kolmio.B, kolmio.C, piste):
                 #jos on, lisätään kolmio huonojen kolmioiden listaan
                 huonot_kolmiot.append(kolmio)
         monikulmiot = set()
@@ -105,9 +104,36 @@ def BowyerWatson(pisteet):
     #palautetaan lista kolmioista, jotka toteuttavat Deluaunay triangulaation
     return deluaunay
 
-#def voronoi(pisteet):
+def kulma_suhteessa_pisteeseen(kolmionkärki, piste): #atan2 palauttaa kulman radiaaneina kahden pisteen välillä. 
+    #lasketaan kulma kolmion kärjen ja pisteen välillä
+    #https://stackoverflow.com/questions/42258637/how-to-know-the-angle-between-two-vectors
+    return math.atan2(piste[1]-kolmionkärki[1], piste[0]-kolmionkärki[0])
+    #tämän avulla voimme järjestää myöhemmin kolmion kärjen ympärillä olevat kehäympyrän keskipisteet järjestykseen
+    
+def voronoi(deluaunay):
     #https://stackoverflow.com/questions/85275/how-do-i-derive-a-voronoi-diagram-given-its-point-set-and-its-delaunay-triangula
-    #muodostetaan Delaunay triangulaatio
-    #kolmiot = BowyerWatson(pisteet)
-    #reuna_ja_kolmiot = {} #avaimena reuna, arvona kolmiot, jotka jakavat reunan
-    #Todo: jos kahdella kolmiolla sama reuna, niin yhdistetään niiden kehäympyröiden keskipisteet
+    #jotta voimme piirtää ja värittää pygamella voronoin monikulmiot, meidän pitää määritellä monikulmioiden kaikki pisteet
+    #tarvitsemme deluaunay kolmion kärkipisteen. Voronoi-diagrammissa kärkeä ympäröivät kehäympyröiden keskipisteet muodostavat monikulmion
+    #eli lasketaan niiden kolmioioden kehäympyröiden keskipisteet, jotka jakavat pisteen yhtenä kolmion kärkenä
+    #nämä lasketut kehäympyrän keskipisteet muodostavat monikulmion kolmion kärjen A ympärille.
+    karki_pisteena = {}
+    for kolmio in deluaunay:
+        for piste in (kolmio.A, kolmio.B, kolmio.C):
+            if piste not in karki_pisteena:
+                karki_pisteena[piste] = []
+            karki_pisteena[piste].append(kolmio)
+    #nyt meillä on sanakirja pisteistä, joiden arvoina on kolmiot johon piste kuuluu
+    voronoi_diagrammi = {} #avaimena kolmion kärki (piste), arvona niiden kolmioiden kehäympyröiden keskipisteet, jotka jakavat tämän kärjen
+    for piste, kolmiot in karki_pisteena.items():
+        kehaympyran_keskipisteet = []
+        for kolmio in kolmiot: #pisteen jakamat kolmiot
+            keskipiste= kehaympyrän_keskipiste(kolmio.A, kolmio.B, kolmio.C)
+            kehaympyran_keskipisteet.append(keskipiste)
+        #kehäympyröiden keskipisteet on nyt listassa, mutta ei järjestyksessä
+        #Tämä on ongelma, sillä jos jätämme nämä tällä tavalla, niin monikulmiota ei synny
+        def kulmat(kehaympyran_keskipiste): #apufunktio
+            return kulma_suhteessa_pisteeseen(piste, kehaympyran_keskipiste) #lasketaan radiaanit kaikille kehäympyröiden keskipisteille
+        kehaympyran_keskipisteet.sort(key=kulmat) #järjestetään nousevaan järjestyksen
+        #tätä voi ajatella yksikköympyränä, jossa kolmion kärki (keskipiste) on origossa.
+        voronoi_diagrammi[piste]= kehaympyran_keskipisteet #nyt sanakirja sisältää kärjen ja sen ympärillä olevat kehäympyröiden keskipisteet järjestyksessä.
+    return voronoi_diagrammi
