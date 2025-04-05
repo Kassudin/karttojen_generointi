@@ -33,3 +33,7 @@
    ```
   python3 src/generaattori.py
    ```
+- Yksikkötestit:
+   ```
+  coverage run --branch -m pytest src
+   ```
