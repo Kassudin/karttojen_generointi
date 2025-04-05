@@ -13,6 +13,8 @@
 
 [viikko 3](https://github.com/Kassudin/karttojen_generointi/blob/main/dokumentaatio/viikkoraportit/viikko3.md)
 
+[viikko 4](https://github.com/Kassudin/karttojen_generointi/blob/main/dokumentaatio/viikkoraportit/viikko4.md)
+
 # Käynnistysohjeet (Linux ympäristö)
 
 - Kloonaa projekti tai lataa zip-pakattu projekti:
