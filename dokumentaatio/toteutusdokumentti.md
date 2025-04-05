@@ -18,3 +18,6 @@ http://www-cs-students.stanford.edu/~amitp/game-programming/polygon-map-generati
 https://www.redblobgames.com/maps/terrain-from-noise/
 https://stackoverflow.com/questions/85275/how-do-i-derive-a-voronoi-diagram-given-its-point-set-and-its-delaunay-triangula
 https://www.baeldung.com/cs/sort-points-clockwise
+https://www.pygame.org/docs/
+https://bit-101.com/blog/posts/2024-02-11/supertriangle/
+https://en.wikipedia.org/wiki/Circumcircle#Circumcenter_coordinates
