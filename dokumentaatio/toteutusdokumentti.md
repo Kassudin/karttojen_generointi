@@ -1,5 +1,5 @@
 # Yleisrakenne
-Tällä ohjelmalla voidaan muodostaa proseduraalisia karttoja. Aluksi ohjelma sijoittaa satunnaisesti valitun määrän pisteitä koordinaatein x,y. Pisteitä yhdistämällä muodostetaan Delaunay triangulaatio Bowyer-Watson algoritmilla. Syntyvä triangulaatio muutetaan sen duaalisuuden ansiosta Voronoi-diagrammiksi, etsimällä kunkin kolmion kärjen ympärillä olevat kehäympyröiden keskipisteet, jotka yhdistetään monikulmioiksi. Lopuksi syntyvä kuvio piirretään ja väritetään pygamella, jolloin kartta saadaan visuaalisesti esille.
+Tällä ohjelmalla voidaan muodostaa proseduraalisia karttoja. Aluksi ohjelma sijoittaa n määrän pisteitä satunnaisesti koordinaatein x,y. Pisteitä yhdistämällä muodostetaan Delaunay triangulaatio Bowyer-Watson algoritmilla. Syntyvä triangulaatio muutetaan sen duaalisuuden ansiosta Voronoi-diagrammiksi, etsimällä kunkin kolmion kärjen ympärillä olevat kehäympyröiden keskipisteet, jotka yhdistetään monikulmioiksi. Lopuksi syntyvä kuvio piirretään ja väritetään pygamella, jolloin kartta saadaan visuaalisesti esille.
 
 # Saavutetut aika- ja tilavaativuudet
 Bowyer-Watson algoritmi toimii pseudokoodin mukaisesti O(n^2).
