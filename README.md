@@ -6,6 +6,10 @@
 
 [testausdokumentti](https://github.com/Kassudin/karttojen_generointi/blob/main/dokumentaatio/testausdokumentti.md)
 
+[toteutusdokumentti](https://github.com/Kassudin/karttojen_generointi/blob/main/dokumentaatio/toteutusdokumentti.md)
+
+
+
 # Viikkoraportit
 [viikko 1](https://github.com/Kassudin/karttojen_generointi/blob/main/dokumentaatio/viikkoraportit/viikko1.md)
 
