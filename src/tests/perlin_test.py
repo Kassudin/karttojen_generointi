@@ -12,25 +12,25 @@ class TestPerlin(unittest.TestCase):
         #t(1) palauttaa 1
         self.assertEqual(sulautus(1.0),1.0)
     
-    def test_lerp(self):
+    def test_lineaarinen_interpolointi(self):
         #a+t*(b-a)
         #lerp(a,b,t) = lerp(5,12,7)
         #5+7*(12-5)=54
         self.assertEqual(lineaarinen_interpolointi(5,12,7), 54)
     
-    def test_grad_h_0(self):
+    def test_gradientti_h_0(self):
         #h=0 eli x+y
         self.assertEqual(gradientti(0, 3, 4), 3 + 4)
     
-    def test_grad_h_1(self):
+    def test_gradientti_h_1(self):
         #h=1 eli -x+y
         self.assertEqual(gradientti(1, 3, 4), -3 + 4)
     
-    def test_grad_h_2(self):
+    def test_gradientti_h_2(self):
         #h=2 eli x-y
         self.assertEqual(gradientti(2, 3, 4), 3 - 4)
 
-    def test_grad_h_3(self):
+    def test_gradientti_h_3(self):
         #h=3 eli -x-y
         self.assertEqual(gradientti(3, 3, 4), -3 - 4)
 
