@@ -33,6 +33,12 @@
   poetry install
   ```
 
+
+- Siirry juurihakemistoon 
+  ```
+  cd karttojen_generointi
+  ```
+  
 - Aktivoi virtuaaliympäristö:
    ```
   poetry shell
