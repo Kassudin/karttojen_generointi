@@ -27,18 +27,15 @@
   ```
   git clone git@github.com:Kassudin/karttojen_generointi.git
   ```
-  
-- Lataa tarvittavat riippuuvuudet:
-  ```
-  poetry install
-  ```
-
-
 - Siirry juurihakemistoon 
   ```
   cd karttojen_generointi
   ```
   
+- Lataa tarvittavat riippuuvuudet:
+  ```
+  poetry install
+  ```
 - Aktivoi virtuaaliympäristö:
    ```
   poetry shell
