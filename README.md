@@ -8,8 +8,6 @@
 
 [toteutusdokumentti](https://github.com/Kassudin/karttojen_generointi/blob/main/dokumentaatio/toteutusdokumentti.md)
 
-
-
 # Viikkoraportit
 [viikko 1](https://github.com/Kassudin/karttojen_generointi/blob/main/dokumentaatio/viikkoraportit/viikko1.md)
 
@@ -20,6 +18,8 @@
 [viikko 4](https://github.com/Kassudin/karttojen_generointi/blob/main/dokumentaatio/viikkoraportit/viikko4.md)
 
 [viikko 5](https://github.com/Kassudin/karttojen_generointi/blob/main/dokumentaatio/viikkoraportit/viikko5.md)
+
+[viikko 6](https://github.com/Kassudin/karttojen_generointi/blob/main/dokumentaatio/viikkoraportit/viikko6.md)
 
 # Käynnistysohjeet (Linux ympäristö)
 
