@@ -7,7 +7,7 @@ from perlin import kohina_2d
 def satunnaiset_pisteet(n=2000):
     return [(random.randint(0, 1920), random.randint(0, 1080)) for _ in range(n)] 
 
-def maaston_vari(x):
+def biomin_vari(x):
     normalisoitu = (x + 1.0) / 2.0 #normalisoidaan arvo välille [0,1]
     #https://en.wikipedia.org/wiki/Feature_scaling
     #helpottaa värien valintaa
@@ -60,8 +60,8 @@ def generoi_kuva(): #pragma no cover
         if len(monikulmiot) >= 3:
             #ilman /300 jakoa tulisi vain yhtä väriä
             perlin_arvo = kohina_2d(karki[0]/300, karki[1]/300) #kohinan arvo kolmion kärjessä
-            maasto = maaston_vari(perlin_arvo)
-            pygame.draw.polygon(naytto, maasto, monikulmiot, 0)
+            biomi = biomin_vari(perlin_arvo)
+            pygame.draw.polygon(naytto, biomi, monikulmiot, 0)
             pygame.display.flip()
             pygame.time.wait(5)
             for tapahtuma in pygame.event.get():
