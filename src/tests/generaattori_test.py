@@ -7,18 +7,22 @@ class TestGeneraattori(unittest.TestCase):
     def test_satunnaiset_pisteet_oikea_maara(self):
         pisteet = satunnaiset_pisteet(n=25)
         self.assertEqual(len(pisteet),25)
+    
+    def test_ala_raja(self):
+        x = -1
+        self.assertEqual(biomin_vari(x), (25, 50, 80))
 
     def test_syva_vesi(self):
         x = -0.6
-        self.assertEqual(biomin_vari(x), (25, 50, 80)) 
+        self.assertEqual(biomin_vari(x), (25, 50, 80))
 
     def test_rantavesi(self):
         x = -0.4
-        self.assertEqual(biomin_vari(x), (80, 120, 150)) 
+        self.assertEqual(biomin_vari(x), (80, 120, 150))
     
     def test_hiekkaranta(self):
         x = -0.2
-        self.assertEqual(biomin_vari(x), (210, 200, 160)) 
+        self.assertEqual(biomin_vari(x), (210, 200, 160))
     
     def test_laakso(self):
         x = 0.0
@@ -40,6 +44,6 @@ class TestGeneraattori(unittest.TestCase):
         x = 0.8
         self.assertEqual(biomin_vari(x), (230, 230, 230))
     
-    def test_raja(self):
+    def test_yla_raja(self):
         x = 1.0
         self.assertEqual(biomin_vari(x), (230, 230, 230))
