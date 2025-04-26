@@ -37,7 +37,7 @@ class TestPerlin(unittest.TestCase):
         # h=3 eli -x-y
         self.assertEqual(gradientti(3, 3, 4), -3 - 4)
 
-    def test_perlin_100_pistettä(self):
+    def test_perlin_100_pistetta(self):
         # Perlin-kohinan tuottamat arvot #ovat teoreettisesti välillä [-sqrt(N)/4, sqrt(N)/4],
         # missä N ulottuvuuksien määrä  #https://digitalfreepen.com/2017/06/20/range-perlin-noise.html.
         # Kaksiulotteinen eli N=2
