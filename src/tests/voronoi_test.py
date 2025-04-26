@@ -1,7 +1,8 @@
 import unittest
+import math
 from bowyer_watson import Kolmio
 from voronoi_diagrammi import voronoi, kulma_suhteessa_pisteeseen
-import math
+
 
 class Testvoronoi_diagrammi(unittest.TestCase):
   

@@ -1,8 +1,8 @@
 import unittest
-from perlin import sulautus, lineaarinen_interpolointi, gradientti, kohina_2d
-from generaattori import satunnaiset_pisteet
 import math
 import random
+from perlin import sulautus, lineaarinen_interpolointi, gradientti, kohina_2d
+from generaattori import satunnaiset_pisteet
 
 class TestPerlin(unittest.TestCase):
 
