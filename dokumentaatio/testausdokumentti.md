@@ -1,5 +1,5 @@
 # kattavuusraportti
-![19.6.2025](kattavuusraportti4.png)
+![26.4](kattavuusraportti5.png)
 
 # Mitä on testattu
 Yksikkötesteillä on testattu:
@@ -19,6 +19,7 @@ Yksikkötesteillä on testattu:
 - Onko Perlin-kohina jatkuvaa.
 - Kohinan jakauma ja sen arvot.
 - Kohinan sileys.
+- Kohinan solmukohdat.
 
 # Testauksessa käytetyt syötteet
 Yksikkötesteissä käytettyjä syötteitä:
