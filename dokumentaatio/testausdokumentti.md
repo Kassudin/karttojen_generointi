@@ -9,7 +9,7 @@ Yksikkötesteillä on testattu:
 - Muodostaako BowyerWatson algoritmi oikean määrän kolmioita eri tilanteissa.
 - Lasketaanko oikein radiaani monikulmion sisällä olevan pisteen ja ulkoreunan pisteen välille.
 - Ohitetaanko sellaiseen keskipisteen laskenta, joka jaetaan nollalla.
-- Jätetäänkö superkolmion kärjet pois triangulaatiosta
+- Jätetäänkö superkolmion kärjet pois triangulaatiosta.
 - Palauttaako Voronoi-diagrammin luova funktio oikean määrän kolmion kärkiä, joiden ympärille muodostetaan monikulmiot.
 - Muodostaako Voronoi-diagrammin luova funktio monikulmioita, jos kolmiot ovat virheellisiä.
 - Toimiiko Perlin-kohinan sulautusfunktio.
@@ -31,7 +31,7 @@ Yksikkötesteissä käytettyjä syötteitä:
 - Lasketaanko oikea radiaani, kun keskipiste (0,0) ja ulkopiste (0,1) tai (-1,0).
 - Palauttaako Voronoi-diagrammin luova funktio kolme kärkeä, kun yksi kolmio, sekä viisi kärkeä, kun kaksi kolmiota (yksi yhteinen piste).
 - Palauttaako Voronoi-diagrammin luova funktio 0 monikulmion kärkeä, kun annetaan kaksi virheellistä kolmiota.
-- sulautusfunktiota testattu arvoilla t(0) ja t(1).
+- sulautusfunktiota testattu arvoilla t(0), t(0.5) ja t(1).
 - lineaarinen interpolaatio arvoilla lerp(5,12,7).
 - Gradienttivektorit, kun h=0, h=1, h=2 ja h=3.
 - Kohina ja sen ominaisuudet tuhannella satunnaisella pisteellä.
