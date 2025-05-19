@@ -4,8 +4,8 @@ import random
 from perlin import sulautus, lineaarinen_interpolointi, gradientti, kohina_2d
 from generaattori import satunnaiset_pisteet
 
-class TestPerlin(unittest.TestCase):
 
+class TestPerlin(unittest.TestCase):
     def test_sulautus(self):
         # 6t^5-15t^4+10t^3
         # Kun t(0) pitäisi palautua 0.
@@ -57,7 +57,7 @@ class TestPerlin(unittest.TestCase):
         for _ in range(1000):
             x, y = random.random(), random.random()
             self.assertNotEqual(kohina_2d(x, y), kohina_2d(x + 0.0001, y + 0.0001))
-  
+    
     def test_kohinan_jakauma(self):
         # Kohinan tulisi olla jakautunut lähelle nollaa, kun  välillä [-sqrt(N)/4, sqrt(N)/4].
         pisteet = satunnaiset_pisteet(1000)

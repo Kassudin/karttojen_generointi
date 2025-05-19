@@ -1,9 +1,8 @@
 import unittest
-
 from generaattori import satunnaiset_pisteet, biomin_vari
 
-class TestGeneraattori(unittest.TestCase):
 
+class TestGeneraattori(unittest.TestCase):
     def test_satunnaiset_pisteet_oikea_maara(self):
         pisteet = satunnaiset_pisteet(n=25)
         self.assertEqual(len(pisteet),25)
@@ -31,7 +30,7 @@ class TestGeneraattori(unittest.TestCase):
     def test_metsa(self):
         x = 0.2
         self.assertEqual(biomin_vari(x), (140, 170, 120))
-
+        
     def test_kukkulat(self):
         x = 0.4
         self.assertEqual(biomin_vari(x), (120, 100, 80))

@@ -1,8 +1,8 @@
 import unittest
 from bowyer_watson import Kolmio, superkolmio, kehaympyran_keskipiste, onko_piste_kehaympyran_sisalla, BowyerWatson
 
-class TestBowyer_Watson(unittest.TestCase):
 
+class TestBowyer_Watson(unittest.TestCase):
     def test_kolmio(self):
         a = (0,0)
         b = (0,2)
@@ -69,7 +69,7 @@ class TestBowyer_Watson(unittest.TestCase):
         kolmiot = BowyerWatson(pisteet)
         # Pisteitä yhteensä 10 eli kolmioita muodostuu 2*10-2-6=12.
         self.assertTrue(len(kolmiot), 12)
-    
+
     def test_bowyer_watson_ei_superkolmiota(self):
         # Testataan, että yksikään kolmio ei jaa kärkeä superkolmion kanssa.
         pisteet = [(0,0), (3,0), (4,2), (3,4), (0,3), (-1,3)]

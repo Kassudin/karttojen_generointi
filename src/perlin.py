@@ -10,7 +10,6 @@ import random
 # Luodaan permutaatiotaulukko, jotta saamme pseudosatunnaisia arvoja.
 permutaatio = list(range(256))
 random.shuffle(permutaatio)
-# Kaksi kertaa.
 p = permutaatio*2
 
 # Määritellään aluksi funktiot kohinan tuottamiseksi.
@@ -18,15 +17,15 @@ p = permutaatio*2
 def lineaarinen_interpolointi(a,b,t): # Interpolaatio #https://en.wikipedia.org/wiki/Linear_interpolation.
     return a+t*(b-a)
 
-
 def sulautus(t): #https://en.wikipedia.org/wiki/Smoothstep
     # Jotta interpolointi olisi sujuva.
     return t ** 3 * (t * (t * 6 - 15) + 10)
 
-# "For a point in a two-dimensional grid,
-# this will require the computation of four offset vectors and dot products"
-# https://en.wikipedia.org/wiki/Perlin_noise
-def gradientti(hash_arvo, x, y): # neljä eri suuntaa
+def gradientti(hash_arvo, x, y): 
+    # "For a point in a two-dimensional grid,
+    # this will require the computation of four offset vectors and dot products"
+    # https://en.wikipedia.org/wiki/Perlin_noise
+    # neljä eri suuntaa
     h = hash_arvo % 4  # Koska kaksiulotteinen, tarvitsemme vain tapaukset h={0,1,2,3}.
     # Nyt h saa aina arvon 0,1,2,3.
     if h == 0:
@@ -48,7 +47,7 @@ def kohina_2d(x, y): # Kaksiulotteinen xy.
     # Nyt indeksit ovat välillä 0-255.
     # Sulautetaan murto-osat myöhempää varten.
     x_smooth = sulautus(x_murto)
-    y_smooth = sulautus(y_murto) 
+    y_smooth = sulautus(y_murto)
 
     # Kulmahashit valitaan permutaatio-taulukosta.
     # Jokainen kulmapiste saa siis hash-arvon.

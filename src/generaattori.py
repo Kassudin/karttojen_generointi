@@ -5,6 +5,7 @@ from bowyer_watson import BowyerWatson
 from voronoi_diagrammi import voronoi
 from perlin import kohina_2d
 
+
 def satunnaiset_pisteet(n=2000):
     return [(random.randint(0, 1920), random.randint(0, 1080)) for _ in range(n)]
 
@@ -78,3 +79,4 @@ def generoi_kuva(): #pragma no cover
 
 if __name__ == "__main__": #pragma no cover
     generoi_kuva()
+    

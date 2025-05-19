@@ -1,5 +1,6 @@
 import math
 
+
 class Kolmio:
     # Kolmion tiedot (pisteet sekä reunat).
     def __init__(self, A, B, C):
@@ -69,11 +70,11 @@ def onko_piste_kehaympyran_sisalla(A,B,C,P):
     # Lasketaan pisteestä P etäisyys keskipisteeseen.
     d = math.sqrt((U[0]-P[0])**2+(U[1]-P[1])**2)
     # Jos etäisyys on pienempi tai yhtäsuuri kuin säde, on piste kehäympyrän sisällä.
-    return d<=r   
+    return d<=r
 
 def BowyerWatson(pisteet):
     # Seurataan pseudokoodia https://en.wikipedia.org/wiki/Bowyer%E2%80%93Watson_algorithm.
-    # Muodostetaan superkolmio´.
+    # Muodostetaan superkolmio.
     sk = superkolmio(pisteet) 
     # Lisätään superkolmio kolmioiden listaan.
     kolmiot = [sk]
@@ -92,9 +93,9 @@ def BowyerWatson(pisteet):
             for reuna in huonot.reunat:
                 #jos reuna ei ole jaettu minkään muun huonon kolmion kanssa,
                 if reuna not in monikulmiot: # Lisätään se.
-                    monikulmiot.add(reuna) 
+                    monikulmiot.add(reuna)
                 else:
-                    monikulmiot.remove(reuna) 
+                    monikulmiot.remove(reuna)
                     # Poistetaan. Reuna tuli vastaan toisessa huonossa kolmiossa.
         for huono_kolmio in huonot_kolmiot:
             kolmiot.remove(huono_kolmio) # Poistetaan huonot kolmiot kolmioiden listasta.
@@ -104,7 +105,7 @@ def BowyerWatson(pisteet):
     deluaunay = [] # Nyt muodostetaan lopullinen triangulaatio.
     for kolmio in kolmiot: # Käydään kolmiolista läpi.
         sk_karjet=(sk.A,sk.B,sk.C) # Superkolmion kärjet.
-        if kolmio.A in sk_karjet or kolmio.B in sk_karjet or kolmio.C in sk_karjet: 
+        if kolmio.A in sk_karjet or kolmio.B in sk_karjet or kolmio.C in sk_karjet:
             # Jos kolmio jakaa superkolmion kärjen, niin ei oteta sitä mukaan.
             continue
         deluaunay.append(kolmio) # Muut lisätään listaan.
