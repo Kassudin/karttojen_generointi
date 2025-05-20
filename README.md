@@ -3,8 +3,8 @@
 
 Proseduraalisten kaksiulotteisten karttojen luomiseen soveltuva ohjelma.
 
-![Delaunay+Voronoi](Delaunay+Voronoi.png)
-![kartta](kartta.png)
+![Delaunay+Voronoi](dokumentaatio/Delaunay+Voronoi.png)
+![kartta](dokumentaatio/kartta.png)
 
 # Dokumentaatio
 [määrittelydokumentti](https://github.com/Kassudin/karttojen_generointi/blob/main/dokumentaatio/m%C3%A4%C3%A4rittelydokumentti.md)
