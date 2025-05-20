@@ -85,13 +85,13 @@ def BowyerWatson(pisteet):
         for kolmio in kolmiot:
             # Tarkistetaan onko piste kolmion kehäympyrän sisällä.
             if onko_piste_kehaympyran_sisalla(kolmio.A, kolmio.B, kolmio.C, piste):
-                #jos on, lisätään kolmio huonojen kolmioiden listaan.
+                # Jos on, lisätään kolmio huonojen kolmioiden listaan.
                 huonot_kolmiot.append(kolmio)
         monikulmiot = set()
-        #käydään huonot kolmiot läpi
+        # Käydään huonot kolmiot läpi.
         for huonot in huonot_kolmiot:
             for reuna in huonot.reunat:
-                #jos reuna ei ole jaettu minkään muun huonon kolmion kanssa,
+                # Jos reuna ei ole jaettu minkään muun huonon kolmion kanssa,
                 if reuna not in monikulmiot: # Lisätään se.
                     monikulmiot.add(reuna)
                 else:

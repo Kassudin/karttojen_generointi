@@ -11,7 +11,7 @@ def satunnaiset_pisteet(n=2000):
 
 def biomin_vari(x):
     normalisoitu = (x + 1.0) / 2.0 # Normalisoidaan arvo välille [0,1].
-    #https://en.wikipedia.org/wiki/Feature_scaling
+    # https://en.wikipedia.org/wiki/Feature_scaling
     # Helpottaa värien valintaa
     if normalisoitu < 0.25:
         return (25, 50, 80)    # Syvä vesi

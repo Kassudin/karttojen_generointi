@@ -17,7 +17,7 @@ p = permutaatio*2 # Kerrotaan kahdella, jotta kulmahashien laskennassa ei ylitet
 def lineaarinen_interpolointi(a,b,t): # Interpolaatio #https://en.wikipedia.org/wiki/Linear_interpolation.
     return a+t*(b-a)
 
-def sulautus(t): #https://en.wikipedia.org/wiki/Smoothstep
+def sulautus(t): # https://en.wikipedia.org/wiki/Smoothstep
     # Jotta interpolointi olisi sujuva.
     return t ** 3 * (t * (t * 6 - 15) + 10)
 
