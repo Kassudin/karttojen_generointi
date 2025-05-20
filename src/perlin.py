@@ -10,7 +10,7 @@ import random
 # Luodaan permutaatiotaulukko, jotta saamme pseudosatunnaisia arvoja.
 permutaatio = list(range(256))
 random.shuffle(permutaatio)
-p = permutaatio*2
+p = permutaatio*2 # Kerrotaan kahdella, jotta kulmahashien laskennassa ei ylitetä listan pituutta.
 
 # Määritellään aluksi funktiot kohinan tuottamiseksi.
 
