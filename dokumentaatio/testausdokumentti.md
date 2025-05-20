@@ -1,5 +1,5 @@
 # kattavuusraportti
-![26.4](kattavuusraportti4.png)
+![20.5](kattavuusraportti5.png)
 
 # Mitä on testattu
 Yksikkötesteillä on testattu:
