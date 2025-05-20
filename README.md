@@ -1,6 +1,11 @@
 # Karttojen generointi
 [![codecov](https://codecov.io/gh/Kassudin/karttojen_generointi/branch/main/graph/badge.svg)](https://app.codecov.io/gh/Kassudin/karttojen_generointi)
 
+Proseduraalisten kaksiulotteisten karttojen luomiseen soveltuva ohjelma.
+
+![Delaunay+Voronoi](Delaunay+Voronoi.png)
+![kartta](kartta.png)
+
 # Dokumentaatio
 [määrittelydokumentti](https://github.com/Kassudin/karttojen_generointi/blob/main/dokumentaatio/m%C3%A4%C3%A4rittelydokumentti.md)
 
