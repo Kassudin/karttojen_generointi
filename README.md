@@ -21,7 +21,7 @@
 
 [viikko 6](https://github.com/Kassudin/karttojen_generointi/blob/main/dokumentaatio/viikkoraportit/viikko6.md)
 
-# Käynnistysohjeet (Linux ympäristö)
+# Ohje käyttöönottoon ja ohjelman suorittamiseen (Linux ympäristö)
 
 - Kloonaa projekti tai lataa zip-pakattu projekti:
   ```
