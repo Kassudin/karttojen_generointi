@@ -1,15 +1,15 @@
 # Yleisrakenne
 Tällä ohjelmalla voidaan muodostaa proseduraalisia karttoja. Aluksi ohjelma sijoittaa n määrän pisteitä satunnaisesti koordinaatein x,y. Pisteitä yhdistämällä muodostetaan Delaunay triangulaatio Bowyer-Watson algoritmilla. Syntyvä triangulaatio muutetaan sen duaalisuuden ansiosta Voronoi-diagrammiksi, etsimällä kunkin kolmion kärjen ympärillä olevat kehäympyröiden keskipisteet, jotka yhdistetään monikulmioiksi.
 
-Lisäksi ohjelmma toteutettaa Perlin-kohinan satunnaisesta permutaatiotaulusta. Tästä saadaan jokaiselle yllämainitulle kolmion kärjelle oma kohina-arvo. Kohina on sulavaa, joten arvot muuttuvat lähekkäin tasaisesti. Nämä arvot väritetään, jolloin saadaan realistista maaston vaihtelua.
+Lisäksi ohjelma toteuttaa Perlin-kohinan satunnaisesta permutaatiotaulusta. Tästä saadaan jokaiselle yllämainitulle kolmion kärjelle oma kohina-arvo. Kohina on sulavaa, joten arvot muuttuvat lähekkäin tasaisesti. Nämä arvot väritetään, jolloin saadaan realistista maaston vaihtelua.
 
 # Saavutetut aika- ja tilavaativuudet
 Bowyer-Watson algoritmi toimii pseudokoodin mukaisesti O(n^2). Perlin-kohina taas (2^d), missä d=2.
 
 # Puutteet ja parannusehdotukset
-Bowyer-Watson algoritmi vaatisi optimointia. Useampi piste hidastaa ohjelmaa paljon, sekä esimerkiksi 5000 pistettä saattaa kaataa koko ohjelman. Lisäksi käyttöliittymään voisi lisätä tietyille parametreille säätöpainikkeet, jolloin ohjelmaa ajaessa voisi vaikuttaa esimerkiksi pisteiden määrään sekä syntyvään kuvioon/värikarttaan.
+Bowyer-Watson algoritmi vaatisi optimointia. Useampi piste hidastaa ohjelmaa paljon. Esimerkiksi 5000 satunnaista pistettä saattaa kaataa koko ohjelman. Lisäksi käyttöliittymään voisi lisätä tietyille parametreille säätöpainikkeet, jolloin ohjelmaa ajaessa voisi vaikuttaa esimerkiksi pisteiden määrään sekä syntyvään kuvioon/värikarttaan.
 
-# Laajojen kielimallien käyttö.
+# Laajojen kielimallien käyttö
 Tässä työssä on käytetty ChatGPT:tä (o1, o3-mini sekä 4o) aiheiden selittämisessä sekä artikkelien suomentamisessa. 
 
 # Lähteet
